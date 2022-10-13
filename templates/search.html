@@ -12,32 +12,38 @@
     アオガク空き教室
   </header>
   <main>
-    <form action="/">
-      <select name="campus">
-        <option>青山キャンパス</option>
-        <option>相模原キャンパス</option>
+    <form action="/search" , method="post">
+      <select name="campus" value={{campus}}>
+        <option>青山</option>
+        <option>相模原</option>
       </select>
-      <select name="day">
-        <option>月曜</option>
-        <option>火曜</option>
-        <option>水曜</option>
-        <option>木曜</option>
-        <option>金曜</option>
-        <option>土曜</option>
+      <select name="day" value={{day}}>
+        <option>月</option>
+        <option>火</option>
+        <option>水</option>
+        <option>木</option>
+        <option>金</option>
+        <option>土</option>
       </select>
       <select name="time">
-        <option>1限</option>
-        <option>2限</option>
-        <option>3限</option>
-        <option>4限</option>
-        <option>5限</option>
-        <option>6限</option>
-        <option>7限</option>
+        <!-- シラバスの情報は全角のため全角 -->
+        <option>１</option>
+        <option>１</option>
+        <option>３</option>
+        <option>４</option>
+        <option>５</option>
+        <option>６</option>
+        <option>７</option>
       </select>
       <input type="submit">
     </form>
     <div class="result">
-      検索結果
+      {{campus}}キャンパス・{{day}}曜日・{{time}}時限の空き教室はこちら
+      {% for list in results %}
+      <ul>
+        <li>{{list[0]}}</li>
+      </ul>
+      {% endfor %}
     </div>
   </main>
   
