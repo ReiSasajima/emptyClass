@@ -13,9 +13,13 @@
   </header>
   <main>
     <form action="/search" , method="post">
-      <select name="campus" value={{campus}}>
+      <select name="campus" value="">
         <option>青山</option>
         <option>相模原</option>
+      </select>
+      <select name="term" id="">
+        <option>前期</option>
+        <option>後期</option>
       </select>
       <select name="day" value={{day}}>
         <option>月</option>
@@ -25,10 +29,10 @@
         <option>金</option>
         <option>土</option>
       </select>
+      <!-- シラバスの情報は全角のため全角 -->
       <select name="time">
-        <!-- シラバスの情報は全角のため全角 -->
         <option>１</option>
-        <option>１</option>
+        <option>２</option>
         <option>３</option>
         <option>４</option>
         <option>５</option>
@@ -38,10 +42,9 @@
       <input type="submit">
     </form>
     <div class="result">
-      {{campus}}キャンパス・{{day}}曜日・{{time}}時限の空き教室はこちら
       {% for list in results %}
       <ul>
-        <li>{{list[0]}}</li>
+        <li>授業時間:{{list[0]}}授業名:{{list[1]}}教室名:{{list[2]}}</li>
       </ul>
       {% endfor %}
     </div>

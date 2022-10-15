@@ -8,5 +8,5 @@ header{
 .result{
   background-color: aqua;
   width: 80%;
-  height: 100px;
+  height: max-content;
 }
