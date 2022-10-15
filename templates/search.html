@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: http://ogp.me/ns#">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="アオガク空き教室">
+  <meta property="og:description" content="空き教室を教えてくれるよ">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="../static/search.css">
-  <title>Document</title>
+  <title>アオガク空き教室</title>
 </head>
 <body>
   <header>
     アオガク空き教室
   </header>
   <main>
-    <form action="/search" , method="post">
+    <form action="/search" , method="post" class="form">
       <select name="campus" value="">
         <option>青山</option>
         <option>相模原</option>
       </select>
       <select name="term" id="">
         <option>前期</option>
-        <option>後期</option>
+        <option selected>後期</option>
       </select>
-      <select name="day" value={{day}}>
+      <select name="day">
         <option>月</option>
         <option>火</option>
         <option>水</option>
@@ -39,12 +43,28 @@
         <option>６</option>
         <option>７</option>
       </select>
-      <input type="submit">
+      <input type="submit" value="さがす">
     </form>
-    <div class="result">
+    <div class="result-title">
+      {% if campus %}
+      {{campus}}キャンパス
+      {% endif %}
+      {% if term %}
+      {{term}}
+      <!--学期-->
+      {% endif %}
+      {% if day %}
+      {{day}}曜日
+      {% endif %}
+      {% if time %}
+      {{time}}時限<br>空き教室は
+      {% endif %}
+    </div>
+    <div class="result-content">
       {% for list in results %}
       <ul>
-        <li>授業時間:{{list[0]}}授業名:{{list[1]}}教室名:{{list[2]}}</li>
+        <!-- <li>{{list[0]}}<br>授業名:{{list[1]}}<br>教室名:{{list[2]}}</li> -->
+        <li>教室名:{{list[2]}}</li>
       </ul>
       {% endfor %}
     </div>
