@@ -61,6 +61,17 @@ input[type="submit"]{
   border: none;
   background-color: #576F72;
 }
+input[type="submit"]:hover{
+  cursor: pointer;
+}
+.affiliate{
+  width: max-content;
+  margin: 5px auto;
+}
+.affiliate > a{
+  display: block;
+  margin: 0 auto;
+}
 .result-title{
   /* background-color: blue; */
   margin:20px auto;

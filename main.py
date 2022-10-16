@@ -45,8 +45,6 @@ def search():
                           '%'+key+'%',
                           '%'+'通年'+'%',
                           ))
-    # results = cur.execute('SELECT DISTINCT "教室" FROM syllabus WHERE "授業時間" LIKE ? AND "授業時間" LIKE ? AND "授業時間" LIKE ? AND "授業時間" LIKE ?', ('%'+day+'%', '%'+time+'%','%'+campus+'%', '%'+term+'%'))
-    # datas = results.fetchall()
     print(results)
     print('検索結果')
     return render_template('search.html', results=results, campus=campus, day=day, time=time, term=term)
