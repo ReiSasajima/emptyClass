@@ -8,6 +8,9 @@
   <meta property="og:description" content="空き教室を教えてくれるよ">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
+  <!-- jPagesのスクリプト読み込み -->
+  <script src="../jPages-master/js/jquery-1.8.2.min.js"></script>
+  <script src="../jPages-master/js/jPages.js"></script>
   <link rel="stylesheet" href="../static/search.css">
   <title>アオガク空き教室</title>
 </head>
@@ -16,6 +19,9 @@
     アオガク空き教室
   </header>
   <main>
+    <div class="attention">
+      <p>もし間違っていれば<br><a href="https://twitter.com/r315513">ツイッターでDM</a>お願いします</p>
+    </div>
     <form action="/search" , method="post" class="form">
       <select name="campus" value="">
         <option>青山</option>
@@ -69,8 +75,8 @@
     <div class="result-content">
       {% for list in results %}
       <ul>
-        <li class="result-content-timelecture">{{list[0]}}<br>授業名:{{list[1]}}</li>
-        <li class="result-content-class">教室名:{{list[2]}}</li>
+        <li class="result-content-timelecture"><span class="">{{list[0]}}<br>授業:{{list[1]}}</span></li>
+        <li class="result-content-class">教室:{{list[2]}}</li>
       </ul>
       {% endfor %}
     </div>
