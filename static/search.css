@@ -83,12 +83,28 @@ input[type="submit"]:hover{
   margin: 0 auto;
   border: 1px solid ;
   border-radius: 15px;
+  text-align: center;
 }
-.result-content > ul > li{
+.result-content > ul{
+  padding: 0%;
+}
+.result-content-timelecture{
   display: inline-block;
   list-style: none;
   /* background-color: #29b6c9; */
-  width: 95%;
+  text-align: left;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
+  font-size: 10px;
+}
+.result-content-class{
+  display: inline-block;
+  list-style: none;
+  /* background-color: #29b6c9; */
+  text-align: left;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
 }
